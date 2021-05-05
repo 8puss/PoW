@@ -32,13 +32,20 @@ def hashCreation():
 def run():
     hash = hashCreation()
     userHash = guessHash()
-    print('You choose ' + userHash)
-    print('The new hash has been created: ' + hash)
-
-    if userHash == hash:
-        print("Great! You won!")
+    
+    if int(len(userHash)) > 3:
+        print("Plese don't use more than 3 digits to create the hash")
+        run()
     else:
-        print("Keep trying!")
+        print('The new hash has been created: ' + hash)
+        if userHash == hash:
+            print("Great! You won!")
+        else:
+            print("Keep trying!")
+            run()
+
+
+
 
 
 if __name__ == '__main__':
