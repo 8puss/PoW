@@ -2,12 +2,6 @@ import random
 
 
 def guessHash():
-    print("""
-        PoW simulator.
-        You gotta guess what will be the next hash.
-        If you do it then you'll be rewarded.
-        Otherwise you gotta keep trying. 
-    """)
     userInput = input("Please enter a 3 digit Hash using capital letters, upper letters, symbols and numbers: ")
     return userInput
 
@@ -49,4 +43,10 @@ def run():
 
 
 if __name__ == '__main__':
+    print("""
+        PoW simulator.
+        You gotta guess what will be the next hash.
+        If you do it then you'll be rewarded.
+        Otherwise you gotta keep trying. 
+    """)
     run()
