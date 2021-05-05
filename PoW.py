@@ -35,6 +35,11 @@ def run():
     print('You choose ' + userHash)
     print('The new hash has been created: ' + hash)
 
+    if userHash == hash:
+        print("Great! You won!")
+    else:
+        print("Keep trying!")
+
 
 if __name__ == '__main__':
     run()
