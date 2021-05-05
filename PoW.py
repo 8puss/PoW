@@ -27,8 +27,8 @@ def run():
     hash = hashCreation()
     userHash = guessHash()
     
-    if int(len(userHash)) > 3:
-        print("Plese don't use more than 3 digits to create the hash")
+    if int(len(userHash)) > 3 or int(len(userHash)) < 3:
+        print("Plese neither use more nor less than 3 digits to create the hash")
         run()
     else:
         print('The new hash has been created: ' + hash)
