@@ -2,7 +2,7 @@ import random
 
     
 def guessHash():
-    userInput = input("Please enter a 3 digit Hash using capital letters, upper letters, symbols and numbers: ")
+    userInput = input("Please enter a 3 digit Hash using capital letters, upper letters, symbols and numbers or write MENU to get back to main menu: ")
     return userInput
 
 def hashCreation():
@@ -28,8 +28,10 @@ def run():
     userHash = guessHash()
     userBalance = []
     
-    if not int(len(userHash)) == 3:
-        print("Plese neither use more nor less than 3 digits to create the hash")
+    if userHash == "MENU":
+        userChoose()
+    elif not int(len(userHash)) == 3:
+        print("Plese neither use more nor less than 3gits to create the hash")
         run()
     else:
         print("You choose " + userHash)
