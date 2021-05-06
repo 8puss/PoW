@@ -1,6 +1,6 @@
 import random
 
-
+    
 def guessHash():
     userInput = input("Please enter a 3 digit Hash using capital letters, upper letters, symbols and numbers: ")
     return userInput
@@ -26,27 +26,49 @@ def hashCreation():
 def run():
     hash = hashCreation()
     userHash = guessHash()
+    userBalance = []
     
-    if int(len(userHash)) > 3 or int(len(userHash)) < 3:
+    if not int(len(userHash)) == 3:
         print("Plese neither use more nor less than 3 digits to create the hash")
         run()
     else:
-        print('The new hash has been created: ' + hash)
+        print("You choose " + userHash)
+        print("The new hash has been created: """ + hash)
         if userHash == hash:
             print("Great! You won!")
+            userBalance.append(hash)
+            return userBalance
         else:
             print("Keep trying!")
             run()
+            return userBalance
 
 
-
+def userChoose():
+    print("""
+1. Play
+2. Check my balance""")
+    userChoise = int(input("What do you wanna do?: "))
+    
+    if userChoise == 1:
+        run()
+    elif userChoise == 2: 
+        print("Your current balance is: ")
+        userChoose()
+    else: 
+        print("Please select a valid entry")
+        userChoose()
 
 
 if __name__ == '__main__':
     print("""
-        PoW simulator.
+        Welcome to PoW simulator.
         You gotta guess what will be the next hash.
         If you do it then you'll be rewarded.
         Otherwise you gotta keep trying. 
     """)
-    run()
+
+userChoose()
+
+    
+    
